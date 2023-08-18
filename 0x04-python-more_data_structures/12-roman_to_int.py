@@ -8,13 +8,14 @@ def to_reduce(num_list):
             red += m
     return (max_list - red)
 
+
 def roman_to_int(roman_string):
     if not roman_string:
         return 0
     if not isinstance(roman_string, str):
         return 0
 
-    roman = {'I': 1, 'V':5 , 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     new_keys = list(roman.keys())
     number = 0
     last_roman = 0
