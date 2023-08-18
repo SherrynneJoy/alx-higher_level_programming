@@ -5,7 +5,7 @@ def to_reduce(num_list):
 
     for m in num_list:
         if max_list > m:
-            red += n
+            red += m
     return (max_list - red)
 
 def roman_to_int(roman_string):
@@ -27,7 +27,6 @@ def roman_to_int(roman_string):
                     num_list = [roman.get(ch)]
                 else:
                     num_list.append(roman.get(ch))
-
                 last_roman = roman.get(ch)
-        number += to_reduce(num_list)
-        return (number)
+    number += to_reduce(num_list)
+    return (number)
