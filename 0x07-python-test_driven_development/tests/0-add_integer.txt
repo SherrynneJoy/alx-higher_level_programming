@@ -42,7 +42,7 @@ The floating-point values are cast into integers before addition
 	>>> add_integer(-2.2, -0.1)
 	-2
 
-It can add-floating point and integers
+It can add floating point and integers
 
 ::
 
@@ -55,6 +55,7 @@ The second argument is optional since by default it has the value 98
 
 	>>> add_integer(2)
 	100
+
 
 Arguments that are not numbers
 ================================
