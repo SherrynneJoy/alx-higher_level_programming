@@ -1,29 +1,28 @@
 #3-say_my_name
 
-=======================
-Printing a name
-=====================
+===========================
+How to use 3-say_my_name.py
+===========================
 
 This module defines a function that prints a name ``say_my_name(first_name, last_name="")``.
 
 usage
 =======
 
-``say_my_name(...)`` prints a name with ``first_name`` and ``last_name`` being strings.
+``say_my_name(...)`` prints "My name is <first name> <last name>"
 
 ::
 
-	>>>say_my_name = __import__('3-say_my_name').say_my_name
-	>>>say_my_name("Sherrynne", "Joy")
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+	>>> say_my_name("Sherrynne", "Joy")
 	My name is Sherrynne Joy
-
-::
 
 The ``last_name`` is optional
 
 ::
 
-	>>>say_my_name("Joy")
+	>>> say_my_name("Joy")
 	My name is Joy
 
 Invalid Names
@@ -33,31 +32,31 @@ Invalid Names
 
 ::
 
-	>>>say_my_name(9, "Joy")
+	>>> say_my_name(9, "Joy")
 	Traceback (most recent call last):
 	TypeError: first_name must be a string
 
 ::
 
-	>>>say_my_name(10.0, "Joy")
+	>>> say_my_name(10.0, "Joy")
 	Traceback (most recent call last):
 	TypeError: first_name must be a string
 
 ::
 
-	>>>say_my_name(None, "Joy")
+	>>> say_my_name(None, "Joy")
 	Traceback (most recent call last):
 	TypeError: first_name must be a string
 
 ::
 
-	>>>say_my_name(None)
+	>>> say_my_name(None)
 	Traceback(most recent call last):
 	TypeError: first_name must be a string
 
 ::
 
-	>>>say_my_name({"Joy": 23, "Peace": 25}, "Jane")
+	>>> say_my_name({"Joy": 23, "Peace": 25}, "Jane")
 	Traceback (most recent call last):
 	TypeError: first_name must be a string
 
@@ -65,19 +64,19 @@ Invalid Names
 
 ::
 
-	>>>say_my_name("Joy", 0)
+	>>> say_my_name("Joy", 0)
 	Traceback (most recent call last):
 	TypeError: last_name must be a string
 
 ::
 
-	>>>say_my_name("Joy", 0.01)
+	>>> say_my_name("Joy", 0.01)
 	Traceback (most recent call last):
 	TypeError: last_name must be a string
 
 ::
 
-	>>>say_my_name("Joy", ["Jane, "Liv", "Peace"])
+	>>> say_my_name("Joy", ["Jane, "Liv", "Peace"])
 	Traceback (most recent call last):
 	TypeError: last_name must be a string
 
@@ -86,6 +85,6 @@ If no argument is provided, the function will fail.
 
 ::
 
-	>>>say_my_name()
+	>>> say_my_name()
 	Traceback (most recent call last):
-	TypeError: say_my_name() missing a first name
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'

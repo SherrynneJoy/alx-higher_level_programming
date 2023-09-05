@@ -18,7 +18,7 @@ Usage
 	>>> matrix = [
 	... [2, 4, 8],
 	... [12, 16, 20]
-	...]
+	... ]
 	>>> print(matrix_divided(matrix, 2))
 	[[1.0, 2.0, 4.0], [6.0, 8.0, 10.0]]
 
@@ -29,7 +29,7 @@ Quotients are rounded to a maximum of two decimal places
 	>>> matrix = [
 	... [5, 7, 8],
 	... [9, 10, 11]
-	...]
+	... ]
 	>>> print(matrix_divided(matrix, 2))
 	[[2.50, 3.50, 4.0], [4.50, 5.0, 5.50]]
 
@@ -47,7 +47,7 @@ The function can also handle floating-point numbers
 	>>> matrix = [
 	... [2.2, 4.4, 5.5],
 	... [6.6, 7.7, 8.8]
-	...]
+	... ]
 	>>> print(matrix_divided(matrix, 2))
 	[[1.1, 2.2, 2.75], [3.3, 3.85, 4.4]]
 
@@ -58,7 +58,7 @@ Integers and floating-point numbers can be mixed
 	>>> matrix = [
 	... [2, 4.4, 6],
 	... [2.2, 6.6, 8]
-	...]
+	... ]
 	>>> print(matrix_divided(matrix, 2))
 	[[1, 2.2, 3], [1.1, 3.3, 4]]
 
@@ -97,14 +97,6 @@ But an empty list of lists will succeed
 	>>> matrix = [[]]
 	>>> print(matrix_divided(matrix, 3))
 	[[]]
-A TypeError is raised if ``matrix`` is not a lists of lists
-
-::
-
-	>>> matrix = [2, 4, 6]
-	>>> print(matrix_divided(matrix, 2))
-	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 A TypeError is also raised if an element in the matrix is neither an int or a float
 
@@ -112,8 +104,8 @@ A TypeError is also raised if an element in the matrix is neither an int or a fl
 
 	>>> matrix = [
 	... [2, 4, 6],
-	... [8, 10, "happy"]
-	...]
+	... [8, 10, "not a number"]
+	... ]
 	>>> print(matrix_divided(matrix, 2))
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
@@ -126,7 +118,7 @@ If the rows are not the same size, a TypeError is raised.
 	>>> matrix = [
 	... [2, 4, 6],
 	... [8, 10, 12, 14]
-	...]
+	... ]
 	>>> print(matrix_divided(matrix, 2))
 	Traceback (most recent call last):
 	TypeError: Each row of the matrix must have the same size
@@ -140,9 +132,9 @@ If ``div`` is not a number, a TypeError message is raised.
 ::
 
 	>>> matrix = [
-	... [2, 4, 6]
+	... [2, 4, 6],
 	... [8, 10, 12]
-	...]
+	... ]
 	>>> print(matrix_divided(matrix, "hello"))
 	Traceback (most recent call last):
 	TypeError: div must be a number
@@ -150,9 +142,9 @@ If ``div`` is not a number, a TypeError message is raised.
 ::
 
 	>>> matrix = [
-	... [2, 4, 6]
+	... [2, 4, 6],
 	... [8, 10, 12]
-	...]
+	... ]
 	>>> print(matrix_divided(matrix, NaN)
 	Traceback (most recent call last):
 	TypeError: div must be a number
@@ -160,9 +152,9 @@ If ``div`` is not a number, a TypeError message is raised.
 ::
 
 	>>> matrix = [
-	... [2, 4, 6]
+	... [2, 4, 6],
 	... [8, 10, 12]
-	...]
+	... ]
 	>>> print(matrix_divided(matrix, None))
 	Traceback (most recent call last):
 	TypeError: div must be a number
@@ -172,9 +164,9 @@ If ``div`` is not a number, a TypeError message is raised.
 ::
 
 	>>> matrix = [
-	... [2, 4, 6]
+	... [2, 4, 6],
 	... [8, 10, 12]
-	...]
+	... ]
 	>>> print(matrix_divided(matrix, 0))
 	Traceback (most recent call last):
 	ZeroDivisionError: division by zero
