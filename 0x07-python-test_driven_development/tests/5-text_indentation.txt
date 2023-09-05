@@ -13,8 +13,8 @@ Usage
 
 ::
 
-	>>>text_indentation = __import__('5-text_indentation').text_indentation
-	>>>text_indentation("How?")
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation("How?")
 	How?
 	<BLANKLINE>
 
@@ -22,25 +22,25 @@ There should be no spaces at the beginning of a line.
 
 ::
 
-	>>>text_indentation(" How?")
+	>>> text_indentation(" How?")
 	How?
 	<BLANKLINE>
 
 ::
 
-	>>>text_indentation(" ")
+	>>> text_indentation(" ")
 
 There should be no spaces at the end of the line.
 
 ::
 
-	>>>text_indentation("Hi Joy. ")
+	>>> text_indentation("Hi Joy. ")
 	Hello Joy.
 	<BLANKLINE>
 
 ::
 
-	>>>text_indentation(" Hi Joy. Nice day. ")
+	>>> text_indentation(" Hi Joy. Nice day. ")
 	Hi Joy.
 	<BLANKLINE>
 	Nice day.
@@ -50,14 +50,14 @@ There should be no spaces at the end of the line.
 
 ::
 
-	>>>text_indentation("Welcome home")
+	>>> text_indentation("Welcome home")
 	Welcome home
 
-New line chaacters will still create a new line.
+New line characters will still create a new line.
 
 ::
 
-	>>>text_indentation("How many? try: \n5.")
+	>>> text_indentation("How many? try: \n5.")
 	How many?
 	<BLANKLINE>
 	try:
@@ -68,14 +68,14 @@ New line chaacters will still create a new line.
 
 ::
 
-	>>>text_indentation("Bye!\n\n")
+	>>> text_indentation("Bye!\n\n")
 	Bye!
 	<BLANKLINE>
 	<BLANKLINE>
 
 ::
 
-	>>>text_indentation("Bye \n Joy.")
+	>>> text_indentation("Bye \n Joy.")
 	Bye
 	<BLANKLINE>
 	Joy.
@@ -85,7 +85,7 @@ The newline character and the ``.``, ``?`` or ``:`` can be used together
 
 ::
 
-	>>>text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing "
+	>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing "
 	... "elit. Quonam modo? Utrum igitur tibi litteram videor an totas "
 	... "paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id "
 	... "optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi "
@@ -130,18 +130,18 @@ Invalid Cases
 
 ::
 
-	>>>text_indentation(7)
+	>>> text_indentation(7)
 	Traceback (most recent call last):
 	TypeError: text must be a string
 
 ::
 
-	>>>text_indentation(4.4)
+	>>> text_indentation(4.4)
 	Traceback (most recent call last):
 	TypeError: text must be a string
 
 ::
 
-	>>>text_indentation(None)
+	>>> text_indentation(None)
 	Traceback (most recent call last):
 	TypeError: text must be a string
