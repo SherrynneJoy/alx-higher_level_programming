@@ -5,8 +5,8 @@
 class Rectangle:
     """Defines an empty class"""
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     """Getter and setter methods to update and retrieve data"""
     @property
