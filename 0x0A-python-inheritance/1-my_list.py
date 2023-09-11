@@ -4,8 +4,8 @@
 
 class MyList(list):
     """list the superclass whereas MyList is the subclass."""
-    def __init__(self):
-        pass
-
     def print_sorted(self):
-        print(sorted(self))
+        sorted_l = sorted(self)
+        for element in sorted_l:
+  #          print(element, end=' ')
+        print()
