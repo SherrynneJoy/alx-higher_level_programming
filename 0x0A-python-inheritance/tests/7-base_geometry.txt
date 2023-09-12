@@ -1,0 +1,60 @@
+#7-base_geometry.txt
+
+==============================
+How to use 7-base_geometry.py
+==============================
+
+This module defines a class called BaseGeometry.
+
+Usage
+=======
+The class defines ``area(...)`` and ``integer_validator(...)`` that
+validate value.
+
+::
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Invalid entries
+
+Getting the area raises an exception.
+
+::
+
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	Traceback (most recent call last):
+	Exception: name must be an integer
+
+If one of the arguments is not of type int, a TypeError is raised.
+
+::
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("Hello", "Joy")
+	Traceback (most recent call last):
+	TypeError: name must be an integer
+
+Passing an argument of zero raises a ValueError.
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("age", 0)
+	Traceback (most recent call last):
+	ValueError: age must be greater than 0
+
+Using a negative value as an argument will also throw an error
+
+::
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("distance", -4)
+	Traceback (most recent call last):
+	ValueError: distance must be greater than 0
+
+When only one argument is provided, a TypeError will be raised.
+
+::
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
