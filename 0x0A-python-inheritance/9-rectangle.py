@@ -12,10 +12,12 @@ class Rectangle(BaseGeometry):
 
     """The area method must be implemented"""
     def area(self):
+        """Gives the area of a rectangle"""
         return (self.__width * self.__height)
 
     """Using __str__ to print a description"""
     def __str__(self):
+        """__str__ print out the description"""
         string = "[" + str(self.__class__.__name__) + "] "
         string += str(self.__width) + "/" + str(self.__height)
         return (string)
