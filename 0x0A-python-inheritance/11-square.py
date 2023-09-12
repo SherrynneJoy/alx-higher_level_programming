@@ -15,7 +15,7 @@ class Square(Rectangle):
         super().__init__(size, size)
         self.__size = size
 
-    """__str__ prints our description"""
+    """str() prints our description"""
     def __str__(self):
         """returns the printed string"""
         string = "[" + str(self.__class__.__name__) + "] "
