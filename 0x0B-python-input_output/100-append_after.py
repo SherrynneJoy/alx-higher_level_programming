@@ -6,12 +6,12 @@ containing a specific string"""
 def append_after(filename="", search_string="", new_string=""):
     """ inserts a line of text to a file, after each line containing
     a specific string"""
-    with open(filename, "r+", encoding="utf-8") as f:
-        lines = f.readlines()
-        f.seek(0)
-
-        """iterating over the file"""
-        for line in lines:
-            f.write(line)
+    text = ""
+    with open(filename) as f:
+        for line in f:
+            text += line
             if search_string in line:
-                f.write(new_string + '\n')
+                text += new_string
+
+    with open(filename, "w") as file:
+        file.write(text)
