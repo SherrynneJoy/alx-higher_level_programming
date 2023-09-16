@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""Creating a class called Base"""
+"""Creates the base class for all other classes"""
 
 
 class Base:
-    """This will be the base of all other classes"""
+    """a class object"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         if id is not None:
             self.id = id
