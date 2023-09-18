@@ -30,3 +30,35 @@ class Square(Rectangle):
         """sets the value to a property"""
         self.width = value
         self.height = value
+
+    """args and kwargs"""
+    def update(self, *args, **kwargs):
+        """updates the rectangle using args"""
+        if args and len(args) != 0:
+            num_args = 0
+            for arg in args:
+                if num_args == 0:
+                    if arg is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif num_args == 1:
+                    self.size = arg
+                elif num_args == 2:
+                    self.x = arg
+                elif num_args == 3:
+                    self.__y = arg
+                num_args += 1
+        elif kwargs and len(kwargs) != 0:
+            for m, n in kwargs.items():
+                if m == "id":
+                    if n is None:
+                        self.__init__(self.size, self.x, self.__y)
+                    else:
+                        self.id = n
+                elif m == "size":
+                    self.size = n
+                elif m == "x":
+                    self.x = n
+                elif m == "y":
+                    self.__y = n
