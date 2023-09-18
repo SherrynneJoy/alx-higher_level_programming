@@ -1,4 +1,6 @@
 import unittest
+import io
+import sys
 from models.rectangle import Rectangle
 from models.base import Base
 
@@ -28,6 +30,46 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.area(), 20)
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
+
+"""Class to test stdout"""
+
+
+class Test_stdout(unittest.TestCase):
+    """Test if text is printed to stdout"""
+
+    @staticmethod
+    def capture_stdout(rect, method):
+        """tests the stdout function"""
+        capture = io.StringIO()
+        sys.stdout = capture
+        if method == "print":
+            print(rect)
+        else:
+            rect.display()
+        sys.stdout = sys.__stdout__
+        return (capture)
+
+    """Test the display method"""
+    def test_display(self):
+        """tests whether display prints to stdout"""
+        r1 = Rectangle(4, 6)
+        capture = Test_stdout.capture_stdout(r1, "display")
+        self.assertEqual("####\n####\n####\n####\n####\n####\n", capture.getvalue())
+        r2 = Rectangle(2, 2)
+        capture = Test_stdout.capture_stdout(r2, "display")
+        self.assertEqual("##\n##\n", capture.getvalue())
+
+    """Tests the __str__ method"""
+    def test_str(self):
+        """Tests whether the str methods prints to stdout"""
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        capture = Test_stdout.capture_stdout(r1, "print")
+        correct = "[Rectangle] (12) 2/1 - 4/6\n".format(r1.id)
+        self.assertEqual(correct, capture.getvalue())
+        r2 = Rectangle(5, 5, 1)
+        capture = Test_stdout.capture_stdout(r2, "print")
+        correct = "[Rectangle] (13) 1/0 - 5/5\n".format(r2.id)
+        self.assertEqual(correct, capture.getvalue())
 
 if __name__ == '__main__':
     unittest.main()
