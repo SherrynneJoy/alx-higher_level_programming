@@ -75,7 +75,7 @@ class Test_stdout(unittest.TestCase):
         self.assertEqual(correct, capture.getvalue())
         r2 = Rectangle(5, 5, 1)
         capture = Test_stdout.capture_stdout(r2, "print")
-        correct = "[Rectangle] (14) 1/0 - 5/5\n".format(r2.id)
+        correct = "[Rectangle] (16) 1/0 - 5/5\n".format(r2.id)
         self.assertEqual(correct, capture.getvalue())
 
     """Tests the update function"""
@@ -83,7 +83,7 @@ class Test_stdout(unittest.TestCase):
         """tests the functionality of the update function"""
         r1 = Rectangle(10, 10, 10, 10)
         capture = Test_stdout.capture_stdout(r1, "print")
-        correct = "[Rectangle] (15) 10/10 - 10/10\n".format(r1.id)
+        correct = "[Rectangle] (17) 10/10 - 10/10\n".format(r1.id)
         self.assertEqual(correct, capture.getvalue())
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(89)
@@ -101,5 +101,20 @@ class Test_stdout(unittest.TestCase):
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual("[Rectangle] (89) 4/5 - 2/3", str(r1))
 
+    """tests the kwargs"""
+    def test_kwargs(self):
+        """tests whether the kwargs works appropriately"""
+        r1 = Rectangle(10, 10, 10, 10)
+        capture = Test_stdout.capture_stdout(r1, "print")
+        correct = "[Rectangle] (17) 10/10 - 10/10".format(r1.id)
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(height=1)
+        self.assertEqual("[Rectangle] (15) 10/10 - 10/1", str(r1))
+        r1.update(width=1, x=2)
+        self.assertEqual("[Rectangle] (15) 2/10 - 1/1", str(r1))
+        r1.update(y=1, width=2, x=3, id=89)
+        self.assertEqual("[Rectangle] (89) 3/1 - 2/1", str(r1))
+        r1.update(x=1, height=2, y=3, width=4)
+        self.assertEqual("[Rectangle] (89) 1/3 - 4/2", str(r1))
 if __name__ == '__main__':
     unittest.main()
