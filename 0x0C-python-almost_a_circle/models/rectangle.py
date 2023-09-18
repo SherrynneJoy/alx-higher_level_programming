@@ -92,3 +92,25 @@ class Rectangle(Base):
         string += str(self.__x) + "/" + str(self.__y) + " - "
         string += str(self.__width) + "/" + str(self.__height)
         return (string)
+
+    """the args and kwargs functions"""
+    def update(self, *args):
+        """updates the rectangle using args"""
+        if args and len(args) != 0:
+            num_args = 0
+            for arg in args:
+                if num_args == 0:
+                    if arg is None:
+                        self.__init__(self.__width, self.__height, self.__x,
+                                self.__y)
+                    else:
+                        self.id = arg
+                elif num_args == 1:
+                    self.__width = arg
+                elif num_args == 2:
+                    self.__height = arg
+                elif num_args == 3:
+                    self.__x = arg
+                elif num_args == 4:
+                    self.__y = arg
+                num_args += 1
