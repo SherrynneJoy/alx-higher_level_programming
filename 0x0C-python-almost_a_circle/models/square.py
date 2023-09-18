@@ -17,3 +17,16 @@ class Square(Rectangle):
         string += str(self.x) + "/" + str(self.y)
         string += " - " + str(self.width)
         return (string)
+
+    """getter and setter methods"""
+    @property
+    def size(self):
+        """returns a property"""
+        return (self.width)
+
+    """a setter method"""
+    @size.setter
+    def size(self, value):
+        """sets the value to a property"""
+        self.width = value
+        self.height = value

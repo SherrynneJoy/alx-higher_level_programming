@@ -64,3 +64,11 @@ class Test_stdout(unittest.TestCase):
         capture = Test_stdout.capture_stdout(s3, "print")
         correct = "[Square] (28) 1/3 - 3\n".format(s3.id)
         self.assertEqual(correct, capture.getvalue())
+
+    """A function to raise errors"""
+    def test_errors(self):
+        """tests whether the errors are raised appropriately"""
+        self.assertRaises(Exception)
+
+if __name__ == '__main__':
+    unittest.main()
