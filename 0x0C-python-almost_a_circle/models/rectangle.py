@@ -74,12 +74,15 @@ class Rectangle(Base):
     """a publlic method to print the rectanglee in stdout"""
     def display(self):
         """prints the rectangle using the '#' symbol"""
-        rect = []
+        if self.__width == 0 or self.__height == 0:
+            print("")
+            return
+
+        [print("") for y in range(self.__y)]
         for i in range(self.__height):
-            [rect.append('#') for j in range(self.__width)]
-            if i != self.__height - 1:
-                rect.append("\n")
-        print("".join(rect))
+            [print(" ", end="") for x in range(self.__x)]
+            [print("#", end="") for j in range(self.__width)]
+            print("")
 
     """the __str__ method"""
     def __str__(self):

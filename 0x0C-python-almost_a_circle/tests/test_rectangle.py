@@ -59,6 +59,13 @@ class Test_stdout(unittest.TestCase):
         capture = Test_stdout.capture_stdout(r2, "display")
         self.assertEqual("##\n##\n", capture.getvalue())
 
+    """Test display with 4 args"""
+    def test_display_four(self):
+        """accepts four arguments"""
+        r1 = Rectangle(2, 3, 2, 2)
+        capture = Test_stdout.capture_stdout(r1, "display")
+        self.assertEqual("\n\n  ##\n  ##\n  ##\n", capture.getvalue())
+
     """Tests the __str__ method"""
     def test_str(self):
         """Tests whether the str methods prints to stdout"""
@@ -68,7 +75,7 @@ class Test_stdout(unittest.TestCase):
         self.assertEqual(correct, capture.getvalue())
         r2 = Rectangle(5, 5, 1)
         capture = Test_stdout.capture_stdout(r2, "print")
-        correct = "[Rectangle] (13) 1/0 - 5/5\n".format(r2.id)
+        correct = "[Rectangle] (14) 1/0 - 5/5\n".format(r2.id)
         self.assertEqual(correct, capture.getvalue())
 
 if __name__ == '__main__':
