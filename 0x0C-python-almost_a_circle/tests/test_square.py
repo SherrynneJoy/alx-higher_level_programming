@@ -99,5 +99,31 @@ class Test_stdout(unittest.TestCase):
         s1.update(size=7, id=89, y=1)
         self.assertEqual("[Square] (89) 12/0 - 7", str(s1))
 
+"""a class to test the dictionary function"""
+
+
+class test_dict(unittest.TestCase):
+    """tests whether the dictionary function works"""
+    def test_right_output(self):
+        """tests whether the function returns the right output"""
+        s1 = Square(10, 2, 1)
+        correct = {'id': 38, 'x': 2, 'size': 10, 'y': 1}
+        self.assertDictEqual(correct, s1.to_dictionary())
+
+    """comparing two dictionaries"""
+    def test_compare_dicts(self):
+        """compares s1 and s2"""
+        s1 = Square(10, 2, 1)
+        s2 = Square(1, 1)
+        s2.update(**s1.to_dictionary())
+        self.assertNotEqual(s1, s2)
+
+    """checking for other errors"""
+    def test_errors_dict(self):
+        """tests for correct output"""
+        s = Square(5, 6, 7, 8)
+        with self.assertRaises(TypeError):
+            s.to_dictionary(1)
+
 if __name__ == '__main__':
     unittest.main()
