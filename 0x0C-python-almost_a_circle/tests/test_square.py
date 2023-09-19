@@ -54,15 +54,15 @@ class Test_stdout(unittest.TestCase):
         """Tests whether the str methods prints to stdout"""
         s1 = Square(5)
         capture = Test_stdout.capture_stdout(s1, "print")
-        correct = "[Square] (27) 0/0 - 5\n".format(s1.id)
+        correct = "[Square] (32) 0/0 - 5\n".format(s1.id)
         self.assertEqual(correct, capture.getvalue())
         s2 = Square(2, 2)
         capture = Test_stdout.capture_stdout(s2, "print")
-        correct = "[Square] (28) 2/0 - 2\n".format(s2.id)
+        correct = "[Square] (33) 2/0 - 2\n".format(s2.id)
         self.assertEqual(correct, capture.getvalue())
         s3 = Square(3, 1, 3)
         capture = Test_stdout.capture_stdout(s3, "print")
-        correct = "[Square] (29) 1/3 - 3\n".format(s3.id)
+        correct = "[Square] (34) 1/3 - 3\n".format(s3.id)
         self.assertEqual(correct, capture.getvalue())
 
     """A function to raise errors"""
@@ -75,7 +75,7 @@ class Test_stdout(unittest.TestCase):
         """tests the functionality of the update function"""
         s1 = Square(5)
         capture = Test_stdout.capture_stdout(s1, "print")
-        correct = "[Square] (30) 0/0 - 5\n".format(s1.id)
+        correct = "[Square] (35) 0/0 - 5\n".format(s1.id)
         self.assertEqual(correct, capture.getvalue())
         s1.update(10)
         self.assertEqual("[Square] (10) 0/0 - 5", str(s1))
@@ -93,9 +93,9 @@ class Test_stdout(unittest.TestCase):
         capture = Test_stdout.capture_stdout(s1, "print")
         correct = "[Square] (1) 0/0 - 5\n".format(s1.id)
         s1.update(x=12)
-        self.assertEqual("[Square] (26) 12/0 - 5", str(s1))
+        self.assertEqual("[Square] (31) 12/0 - 5", str(s1))
         s1.update(size=7, y=1)
-        self.assertEqual("[Square] (26) 12/0 - 7", str(s1))
+        self.assertEqual("[Square] (31) 12/0 - 7", str(s1))
         s1.update(size=7, id=89, y=1)
         self.assertEqual("[Square] (89) 12/0 - 7", str(s1))
 

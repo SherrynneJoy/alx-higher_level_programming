@@ -102,7 +102,7 @@ class Rectangle(Base):
                 if num_args == 0:
                     if arg is None:
                         self.__init__(self.__width, self.__height, self.__x,
-                                self.__y)
+                                      self.__y)
                     else:
                         self.id = arg
                 elif num_args == 1:
@@ -119,7 +119,7 @@ class Rectangle(Base):
                 if m == "id":
                     if n is None:
                         self.__init__(self.__width, self.__height, self.__x,
-                                self.__y)
+                                      self.__y)
                     else:
                         self.id = n
                 elif m == "width":
@@ -130,3 +130,14 @@ class Rectangle(Base):
                     self.__x = n
                 elif m == "y":
                     self.__y = n
+
+    """a public method that returns dictionary representation of rectangle"""
+    def to_dictionary(self):
+        """returns dictionary representation of rectangle"""
+        return {
+                "id": self.id,
+                "width": self.__width,
+                "height": self.__height,
+                "x": self.__x,
+                "y": self.__y
+                }
