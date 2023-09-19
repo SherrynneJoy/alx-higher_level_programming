@@ -30,7 +30,7 @@ class test_json_string(unittest.TestCase):
     def test_str_json(self):
         """tests for correct output"""
         r1 = Rectangle(10, 7, 2, 8)
-        self.assertEqual(str, type(Base.to_json_string([dictionary])))
+        self.assertEqual(str, type(Base.to_json_string([r1.to_dictionary()])))
 
 if __name__ == '__main__':
     unittest.main()

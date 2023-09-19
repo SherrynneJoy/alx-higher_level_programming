@@ -75,11 +75,11 @@ class Test_stdout(unittest.TestCase):
         self.assertEqual(correct, capture.getvalue())
         r2 = Rectangle(5, 5, 1)
         capture = Test_stdout.capture_stdout(r2, "print")
-        correct = "[Rectangle] (16) 1/0 - 5/5\n".format(r2.id)
+        correct = "[Rectangle] (17) 1/0 - 5/5\n".format(r2.id)
         self.assertEqual(correct, capture.getvalue())
         r1 = Rectangle(10, 2, 1, 9)
         capture = Test_stdout.capture_stdout(r1, "print")
-        correct = "[Rectangle] (17) 1/9 - 10/2\n".format(r1.id)
+        correct = "[Rectangle] (18) 1/9 - 10/2\n".format(r1.id)
         self.assertEqual(correct, capture.getvalue())
 
     """Tests the update function"""
@@ -87,7 +87,7 @@ class Test_stdout(unittest.TestCase):
         """tests the functionality of the update function"""
         r1 = Rectangle(10, 10, 10, 10)
         capture = Test_stdout.capture_stdout(r1, "print")
-        correct = "[Rectangle] (18) 10/10 - 10/10\n".format(r1.id)
+        correct = "[Rectangle] (19) 10/10 - 10/10\n".format(r1.id)
         self.assertEqual(correct, capture.getvalue())
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(89)
@@ -113,9 +113,9 @@ class Test_stdout(unittest.TestCase):
         correct = "[Rectangle] (19) 10/10 - 10/10".format(r1.id)
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(height=1)
-        self.assertEqual("[Rectangle] (15) 10/10 - 10/1", str(r1))
+        self.assertEqual("[Rectangle] (16) 10/10 - 10/1", str(r1))
         r1.update(width=1, x=2)
-        self.assertEqual("[Rectangle] (15) 2/10 - 1/1", str(r1))
+        self.assertEqual("[Rectangle] (16) 2/10 - 1/1", str(r1))
         r1.update(y=1, width=2, x=3, id=89)
         self.assertEqual("[Rectangle] (89) 3/1 - 2/1", str(r1))
         r1.update(x=1, height=2, y=3, width=4)
@@ -129,7 +129,7 @@ class test_dict(unittest.TestCase):
     def test_to_dictionary(self):
         """tests the dictionary method"""
         r1 = Rectangle(10, 2, 1, 9)
-        correct = {'x': 1, 'y': 9, 'id': 27, 'height': 2, 'width': 10}
+        correct = {'x': 1, 'y': 9, 'id': 28, 'height': 2, 'width': 10}
         self.assertDictEqual(correct, r1.to_dictionary())
 
     """comparing two dictionaries"""

@@ -54,15 +54,15 @@ class Test_stdout(unittest.TestCase):
         """Tests whether the str methods prints to stdout"""
         s1 = Square(5)
         capture = Test_stdout.capture_stdout(s1, "print")
-        correct = "[Square] (32) 0/0 - 5\n".format(s1.id)
+        correct = "[Square] (33) 0/0 - 5\n".format(s1.id)
         self.assertEqual(correct, capture.getvalue())
         s2 = Square(2, 2)
         capture = Test_stdout.capture_stdout(s2, "print")
-        correct = "[Square] (33) 2/0 - 2\n".format(s2.id)
+        correct = "[Square] (34) 2/0 - 2\n".format(s2.id)
         self.assertEqual(correct, capture.getvalue())
         s3 = Square(3, 1, 3)
         capture = Test_stdout.capture_stdout(s3, "print")
-        correct = "[Square] (34) 1/3 - 3\n".format(s3.id)
+        correct = "[Square] (35) 1/3 - 3\n".format(s3.id)
         self.assertEqual(correct, capture.getvalue())
 
     """A function to raise errors"""
@@ -75,7 +75,7 @@ class Test_stdout(unittest.TestCase):
         """tests the functionality of the update function"""
         s1 = Square(5)
         capture = Test_stdout.capture_stdout(s1, "print")
-        correct = "[Square] (35) 0/0 - 5\n".format(s1.id)
+        correct = "[Square] (36) 0/0 - 5\n".format(s1.id)
         self.assertEqual(correct, capture.getvalue())
         s1.update(10)
         self.assertEqual("[Square] (10) 0/0 - 5", str(s1))
@@ -93,9 +93,9 @@ class Test_stdout(unittest.TestCase):
         capture = Test_stdout.capture_stdout(s1, "print")
         correct = "[Square] (1) 0/0 - 5\n".format(s1.id)
         s1.update(x=12)
-        self.assertEqual("[Square] (31) 12/0 - 5", str(s1))
+        self.assertEqual("[Square] (32) 12/0 - 5", str(s1))
         s1.update(size=7, y=1)
-        self.assertEqual("[Square] (31) 12/0 - 7", str(s1))
+        self.assertEqual("[Square] (32) 12/0 - 7", str(s1))
         s1.update(size=7, id=89, y=1)
         self.assertEqual("[Square] (89) 12/0 - 7", str(s1))
 
@@ -107,7 +107,7 @@ class test_dict(unittest.TestCase):
     def test_right_output(self):
         """tests whether the function returns the right output"""
         s1 = Square(10, 2, 1)
-        correct = {'id': 38, 'x': 2, 'size': 10, 'y': 1}
+        correct = {'id': 39, 'x': 2, 'size': 10, 'y': 1}
         self.assertDictEqual(correct, s1.to_dictionary())
 
     """comparing two dictionaries"""
