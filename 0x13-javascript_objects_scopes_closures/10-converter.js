@@ -1,12 +1,10 @@
 #!/usr/bin/node
 exports.converter = function (base) {
   return function convertToBase (number) {
-    if (number === 0) {
-      return 0;
+    if (number < base) {
+      return number.toString(base);
+    } else {
+      return convertToBase(Math.floor(number / base)) + (number % base).toString(base);
     }
-    const remainder = number % base;
-    const answer = Math.floor(number / base);
-    const result = convertToBase(answer) + (remainder < 10 ? remainder : String.fromCharCode(87 + remainder));
-    return result;
   };
 };
