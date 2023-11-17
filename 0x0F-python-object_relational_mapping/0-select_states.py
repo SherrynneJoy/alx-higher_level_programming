@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import MySQLdb
 """This module connects to a db, creates a curor, exocutes and prints output"""
+import MySQLdb
 
 
 if __name__ == "__main__":
