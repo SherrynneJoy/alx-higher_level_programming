@@ -10,7 +10,8 @@ if __name__ == "__main__":
                                passwd="root", db="hbtn_0e_0_usa",
                                charset="utf8")
         curs = conn.cursor()
-        curs.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id ASC")
+        curs.execute("""SELECT * FROM states WHERE name
+                    LIKE BINARY 'N%' ORDER BY states.id""")
         total_rows = curs.fetchall()
         for row in total_rows:
             print(row)
