@@ -1,0 +1,3 @@
+#!/bin/bash
+#displays the status of the response
+curl -s -L -X HEAD -w "%{http_code}" "$1"
