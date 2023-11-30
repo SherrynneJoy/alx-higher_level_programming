@@ -3,4 +3,4 @@
 #and displays the size of the body of the response
 
 url="$1"
-answer=$(curl -s "$url" | tr -d '[:space:]' | wc -c)
+curl -s "$url" | tr -d '[:space:]' | wc -c
