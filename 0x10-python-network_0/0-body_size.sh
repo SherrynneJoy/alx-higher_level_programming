@@ -1,6 +1,4 @@
 #!/bin/bash
-#a Bash script that takes in a URL, sends a request to that URL,
-#and displays the size of the body of the response
+#a Bash script that takes in URL, sends a request and gives the content length
 
-url="$1"
-curl -s "$url" | tr -d '[:space:]' | wc -c
+curl -sI "$1" | grep -i Content-Length
