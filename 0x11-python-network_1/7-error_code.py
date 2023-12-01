@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 """a Python script that takes in a URL, sends a request to the"""
 """URL and displays the body of the response."""
 import requests
@@ -13,4 +13,4 @@ if __name__ == "__main__":
 
         print(r.text)
     except requests.exceptions.HTTPError as e:
-        print(f"Error code: {e.response.stats_code]")
+        print(f"Error code: {e.response.status_code}")
