@@ -7,6 +7,9 @@ import sys
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    r = requests.get(url)
-    content = r.headers['X-Request-Id']
-    print(content)
+    try:
+        r = requests.get(url)
+        content = r.headers['X-Request-Id']
+        print(content)
+    except requests.RequestException as e:
+        print(f"Error: {e}")
