@@ -11,7 +11,7 @@ const readFile = (fp) => {
   }
 };
 
-if (process.argv.length != 3) {
+if (process.argv.length !== 3) {
   console.log('Usage: node script.js <file_path>');
 } else {
   const fp = process.argv[2];
